@@ -1,5 +1,7 @@
 package fr.iutvalence.info.m3105.stackmachine;
 
+import java.security.InvalidParameterException;
+
 public class MachineLauncher
 {
 
@@ -58,8 +60,9 @@ public class MachineLauncher
 			programMemory = new Memory(0x00000000, 0x00000020);
 			expStack = new Stack(16);
 			callStack = new Stack(16);
+			
 		}
-		catch (InvalidParametersException e)
+		 catch (InvalidParametersException e)
 		{
 			// Safely ignore this error, which is not one
 		}

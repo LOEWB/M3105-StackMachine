@@ -33,12 +33,13 @@ public class CPU
 
 	public void run()
 	{
-		try
-		{
+//		try
+//		{
 			while (true)
 			{
 				// TODO something is missing here...
 
+				int opCode = Program.getInstructionCount();
 				// System.err.print("@" + this.programCounter + ": ");
 				switch (opCode)
 				{
@@ -160,23 +161,23 @@ public class CPU
 					}
 				}
 			}
-		}
-		catch (AddressOutOfBoundsException e)
-		{
-			// TODO something is missing here...
-		}
-		catch (IOException e)
-		{
-			// TODO something is missing here...
-		}
-		catch (StackOverflowException e)
-		{
-			// TODO something is missing here...
-		}
-		catch (StackUnderflowException e)
-		{
-			// TODO something is missing here...
-		}		
+//		}
+//		catch (AddressOutOfBoundsException e)
+//		{
+//			// TODO something is missing here...
+//		}
+//		catch (IOException e)
+//		{
+//			// TODO something is missing here...
+//		}
+//		catch (StackOverflowException e)
+//		{
+//			// TODO something is missing here...
+//		}
+//		catch (StackUnderflowException e)
+//		{
+//			// TODO something is missing here...
+//		}		
 	}
 
 	public void wireToProgramMemory(Memory programMemory) {

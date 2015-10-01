@@ -11,7 +11,7 @@ public class Program {
 		return null;
 	}
 
-	public int getInstructionCount() {
+	public static int getInstructionCount() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
