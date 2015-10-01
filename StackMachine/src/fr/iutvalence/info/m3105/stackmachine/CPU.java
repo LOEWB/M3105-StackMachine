@@ -27,9 +27,11 @@ public class CPU
 	public final static int JZ		= 0x13;
 	public final static int DUP		= 0x14;
 	public final static int POP		= 0x15;
-	private IO ioSystem;
 	
-	// TODO something is missing here...
+	private IO ioSystem;
+	private Memory programMemory;
+	private Stack expStack;
+	private Stack callStack;
 
 	public void run()
 	{
@@ -39,7 +41,7 @@ public class CPU
 			{
 				// TODO something is missing here...
 
-				int opCode = Program.getInstructionCount();
+				int opCode = ;
 				// System.err.print("@" + this.programCounter + ": ");
 				switch (opCode)
 				{
@@ -181,17 +183,16 @@ public class CPU
 	}
 
 	public void wireToProgramMemory(Memory programMemory) {
-		// TODO Auto-generated method stub
-		
+		this.programMemory = programMemory;		
 	}
 
 	public void wireToExpStack(Stack expStack) {
-		// TODO Auto-generated method stub
+		this.expStack = expStack;	
 		
 	}
 
 	public void wireToCallStack(Stack callStack) {
-		// TODO Auto-generated method stub
+		this.callStack = callStack;	
 		
 	}
 

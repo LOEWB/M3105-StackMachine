@@ -60,9 +60,8 @@ public class MachineLauncher
 			programMemory = new Memory(0x00000000, 0x00000020);
 			expStack = new Stack(16);
 			callStack = new Stack(16);
-			
 		}
-		 catch (InvalidParametersException e)
+		 catch (InvalidParameterException e)
 		{
 			// Safely ignore this error, which is not one
 		}
