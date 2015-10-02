@@ -41,7 +41,7 @@ public class CPU
 			{
 				// TODO something is missing here...
 
-				int opCode = ;
+				int opCode = programMemory.getStartAddress();
 				// System.err.print("@" + this.programCounter + ": ");
 				switch (opCode)
 				{

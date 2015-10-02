@@ -160,11 +160,11 @@ ${members}}
 
       classrelation 133122 // <association>
 	relation 130562 ----
-	  a role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+	  a role_name "" multiplicity "2" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type}${multiplicity} ${name}${value};
 "
 	    classrelation_ref 133122 // <association>
-	  b role_name "" private
+	  b role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 133250 // <association>
@@ -172,11 +172,11 @@ ${members}}
 
       classrelation 133634 // <association>
 	relation 130818 ----
-	  a role_name "" private
+	  a role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 133634 // <association>
-	  b role_name "" private
+	  b role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 133762 // <association>
@@ -184,6 +184,46 @@ ${members}}
 
       classrelation 134018 // <association>
 	relation_ref 130946 // <association>
+      end
+
+      attribute 128004 "ioSystem"
+	private type class_ref 128130 // IO
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128132 "programMemory"
+	private type class_ref 128770 // Memory
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128260 "expStack"
+	private type class_ref 128514 // Stack
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128388 "callStack"
+	private type class_ref 128514 // Stack
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
       end
     end
 
@@ -280,12 +320,12 @@ ${members}}
 
       classrelation 133890 // <association>
 	relation 130946 ----
-	  a role_name "" private
+	  a role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 133890 // <association>
-	  b role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+	  b role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 134018 // <association>
       end
@@ -352,10 +392,6 @@ ${members}}
 	    classrelation_ref 132994 // <composition>
       end
 
-      classrelation 133506 // <association>
-	relation_ref 130690 // <association>
-      end
-
       classrelation 128132 // <association>
 	relation_ref 128004 // <association>
       end
@@ -385,17 +421,6 @@ ${members}}
 	
       end
 
-      classrelation 133378 // <association>
-	relation 130690 ----
-	  a role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	    classrelation_ref 133378 // <association>
-	  b role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
-"
-	    classrelation_ref 133506 // <association>
-      end
     end
 
     classdiagram 128002 "Stack_Machine"
@@ -466,14 +491,24 @@ ${members}}
 
       classrelation 134146 // <association>
 	relation 131074 ----
-	  a role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+	  a role_name "" multiplicity "1..*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 134146 // <association>
-	  b role_name "" private
+	  b role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 134274 // <association>
+      end
+
+      attribute 128516 "tabInstructions"
+	private explicit_type "Instruction[]"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
       end
     end
 
@@ -555,12 +590,12 @@ ${members}}
 
       classrelation 128004 // <association>
 	relation 128004 ----
-	  a role_name "" private
+	  a role_name "" multiplicity "1" private
 	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
 "
 	    classrelation_ref 128004 // <association>
-	  b role_name "" private
-	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+	  b role_name "" multiplicity "*" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 128132 // <association>
       end
