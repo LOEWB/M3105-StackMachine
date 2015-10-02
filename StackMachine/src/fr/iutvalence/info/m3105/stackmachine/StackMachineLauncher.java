@@ -2,7 +2,7 @@ package fr.iutvalence.info.m3105.stackmachine;
 
 import java.security.InvalidParameterException;
 
-public class MachineLauncher
+public class StackMachineLauncher
 {
 
 	public static void main(String[] args)
@@ -31,23 +31,23 @@ public class MachineLauncher
 		Instruction[] instructions = 
 				new Instruction[] 
 				{
-						new Instruction(CPU.IN, null),
-						new Instruction(CPU.CALL, new int[] {0x5}),
-						new Instruction(CPU.OUT, null),
-						new Instruction(CPU.HALT, null),
-						new Instruction(CPU.DUP, null),
-						new Instruction(CPU.JZ, new int[] {0xb}),
-						new Instruction(CPU.CALL, new int[] {0xf}),
-						new Instruction(CPU.RET, null),
-						new Instruction(CPU.POP, null),
-						new Instruction(CPU.PUSH, new int[] {0x1}),
-						new Instruction(CPU.RET, null),
-						new Instruction(CPU.DUP, null),
-						new Instruction(CPU.PUSH, new int[] {0x1}),
-						new Instruction(CPU.SUB, null),
-						new Instruction(CPU.CALL, new int[] {0x5}),
-						new Instruction(CPU.MUL, null),
-						new Instruction(CPU.RET, null)
+						new Instruction(StackCPU.IN, null),
+						new Instruction(StackCPU.CALL, new int[] {0x5}),
+						new Instruction(StackCPU.OUT, null),
+						new Instruction(StackCPU.HALT, null),
+						new Instruction(StackCPU.DUP, null),
+						new Instruction(StackCPU.JZ, new int[] {0xb}),
+						new Instruction(StackCPU.CALL, new int[] {0xf}),
+						new Instruction(StackCPU.RET, null),
+						new Instruction(StackCPU.POP, null),
+						new Instruction(StackCPU.PUSH, new int[] {0x1}),
+						new Instruction(StackCPU.RET, null),
+						new Instruction(StackCPU.DUP, null),
+						new Instruction(StackCPU.PUSH, new int[] {0x1}),
+						new Instruction(StackCPU.SUB, null),
+						new Instruction(StackCPU.CALL, new int[] {0x5}),
+						new Instruction(StackCPU.MUL, null),
+						new Instruction(StackCPU.RET, null)
 				};
 		Program program = new Program(instructions);
 		
@@ -66,8 +66,8 @@ public class MachineLauncher
 			// Safely ignore this error, which is not one
 		}
 		
-		IO ioSystem = new IO(System.in, System.out, System.err);
-		CPU cpu = new CPU();		
+		IOconsole ioSystem = new IOconsole(System.in, System.out, System.err);
+		StackCPU cpu = new StackCPU();		
 		Machine machine = new Machine(cpu, programMemory, expStack, callStack, ioSystem );
 		try
 		{

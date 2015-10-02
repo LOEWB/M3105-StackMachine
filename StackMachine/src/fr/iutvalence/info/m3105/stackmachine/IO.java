@@ -7,44 +7,15 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
-public class IO
-{
-	private BufferedReader in;
-	private PrintStream out;
-	private PrintStream err;
+public interface IO {
 	
+
+	public void displayRuntimeError(String string);
 	
-	public IO(InputStream inStream, OutputStream outStream, OutputStream errStream)
-	{
-		super();
-		this.in = new BufferedReader(new InputStreamReader(inStream));
-		this.out = new PrintStream(outStream);
-		this.err = new PrintStream(errStream);
-	}
+	public void displayProgramTermination();
 
-	public void displayRuntimeError(String string)
-	{
-		System.err.println(string);
-		
-	}
-	
-	public void displayProgramTermination()
-	{
-		System.out.println("(HALT)");
-	}
+	public int read() throws IOException;
 
-	public int read() throws IOException
-	{
-		this.out.print("? ");
-		String line = this.in.readLine();
-		this.out.println();
-		return Integer.parseInt(line);
-		
-	}
+	public void write(int op);
 
-	public void write(int op)
-	{
-		this.out.println("> "+op);
-		
-	}
 }

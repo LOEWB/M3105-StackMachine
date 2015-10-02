@@ -4,8 +4,11 @@ public class Machine
 {
 	private CPU cpu;
 	private Memory programMemory;
+	private Stack expStack;
+	private Stack callStack;
+	private IO ioSystem;
 
-	public Machine(CPU cpu, Memory programMemory, Stack expStack, Stack callStack, IO ioSystem)
+	public Machine(StackCPU cpu, Memory programMemory, Stack expStack, Stack callStack, IOconsole ioSystem)
 	{
 		super();
 		this.cpu = cpu;
